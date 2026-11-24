@@ -1,0 +1,10 @@
+{
+  "id": "evt_101",
+  "amount": 2500,
+  "currency": "usd",
+  "customer": {
+    "id": "cus_99",
+    "email": "buyer@example.com"
+  },
+  "webhook_secret": "whsec_supersecret123"
+}

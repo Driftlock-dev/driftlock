@@ -1,0 +1,39 @@
+{
+  "driftlock_version": "1.0",
+  "contract": {
+    "type": "object",
+    "nullable": false,
+    "properties": {
+      "amount": {
+        "type": "int",
+        "nullable": false
+      },
+      "currency": {
+        "type": "str",
+        "nullable": false
+      },
+      "customer": {
+        "type": "object",
+        "nullable": false,
+        "properties": {
+          "email": {
+            "type": "str",
+            "nullable": false
+          },
+          "id": {
+            "type": "str",
+            "nullable": false
+          }
+        }
+      },
+      "id": {
+        "type": "str",
+        "nullable": false
+      },
+      "webhook_secret": {
+        "type": "str",
+        "nullable": false
+      }
+    }
+  }
+}

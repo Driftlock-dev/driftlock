@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "driftlock"
+version = "0.1.0"
+description = "Zero-dependency CLI & GitHub Action to catch breaking webhook and API JSON schema drift."
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "DriftLock", email = "driftlock.dev@gmail.com"}]
+dependencies = []
+
+[project.scripts]
+driftlock = "driftlock.cli:main"

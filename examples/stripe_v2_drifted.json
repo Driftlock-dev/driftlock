@@ -1,0 +1,9 @@
+{
+  "id": "evt_102",
+  "amount": "2500",
+  "currency": "usd",
+  "customer": {
+    "id": null
+  },
+  "new_region_tag": "ap-south-1"
+}

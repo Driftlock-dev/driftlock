@@ -1,0 +1,25 @@
+name: "DriftLock Payload Guard"
+description: "Catch breaking webhook and API JSON schema drift in CI pull requests."
+inputs:
+  contract:
+    description: "Path to locked driftlock contract JSON"
+    required: true
+  payload:
+    description: "Path to incoming JSON payload fixture"
+    required: true
+  strict:
+    description: "Fail on non-breaking field additions"
+    required: false
+    default: "false"
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/setup-python@v5
+      with:
+        python-version: "3.11"
+    - name: Run DriftLock Diff
+      shell: bash
+      run: |
+        STRICT_FLAG=""
+        if [ "${{ inputs.strict }}" = "true" ]; then STRICT_FLAG="--strict"; fi
+        python -m driftlock.cli diff "${{ inputs.contract }}" "${{ inputs.payload }}" --markdown $STRICT_FLAG
